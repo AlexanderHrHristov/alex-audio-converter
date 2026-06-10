@@ -7,6 +7,3 @@ BASIC_PROFILES = {
     "Archive": {"format": "wav", "bitrate": "lossless"},
 }
 
-FORMATS = ["mp3", "m4a", "flac", "wav", "ogg", "opus", "original"]
-BITRATES = ["96", "128", "192", "256", "320", "lossless", "copy"]
-SPLIT_MODES = ["No split", "By chapters", "By silence", "From timestamps file"]

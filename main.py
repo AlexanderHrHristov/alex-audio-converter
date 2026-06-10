@@ -7,7 +7,7 @@ import tkinter.messagebox as mb
 import customtkinter as ctk
 
 from converter import AudioConverter
-from settings import BASIC_PROFILES, FORMATS, BITRATES, SPLIT_MODES
+from settings import BASIC_PROFILES
 
 
 class App(ctk.CTk):
@@ -46,10 +46,9 @@ class App(ctk.CTk):
         self.tabs.pack(pady=15)
 
         self.basic_tab = self.tabs.add("Basic")
-        self.advanced_tab = self.tabs.add("Advanced")
 
         self.build_basic_tab()
-        self.build_advanced_tab()
+  
 
         self.folder_label = ctk.CTkLabel(
             self,
@@ -207,23 +206,15 @@ class App(ctk.CTk):
             mb.showinfo("Timestamps", "Файлът е избран.")
 
     def get_current_settings(self):
-        current_tab = self.tabs.get()
-
-        if current_tab == "Basic":
-            profile = BASIC_PROFILES[self.selected_basic_profile]
-            return {
-                "audio_format": profile["format"],
-                "bitrate": profile["bitrate"],
-                "split_mode": "No split",
-                "timestamps_file": None,
-            }
+        profile = BASIC_PROFILES[self.selected_basic_profile]
 
         return {
-            "audio_format": self.format_box.get(),
-            "bitrate": self.bitrate_box.get(),
-            "split_mode": self.split_box.get(),
-            "timestamps_file": self.timestamps_file,
+            "audio_format": profile["format"],
+            "bitrate": profile["bitrate"],
+            "split_mode": "No split",
+            "timestamps_file": None,
         }
+
 
     def start_conversion(self):
         url = self.url_entry.get().strip()
