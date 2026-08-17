@@ -9,6 +9,8 @@ import customtkinter as ctk
 from converter import AudioConverter
 from settings import BASIC_PROFILES
 
+from locales.en import TRANSLATIONS as EN
+from locales.bg import TRANSLATIONS as BG
 
 class App(ctk.CTk):
     def __init__(self):
@@ -129,8 +131,22 @@ class App(ctk.CTk):
 
         # Пазим картите, за да маркираме избраната.
         self.profile_cards = {}
+        
+        self.language = "en"
+        
+        self.translations = {
+            "en": EN,
+            "bg": BG,
+        }
 
         self.build_ui()
+
+    def t(self, key):
+        return self.translations.get(
+            self.language,
+            EN
+        ).get(key, key)
+
 
     def build_ui(self):
         # Главният контейнер използва grid, което е
@@ -159,9 +175,7 @@ class App(ctk.CTk):
             self,
             width=url_width,
             height=35,
-            placeholder_text=(
-                "Постави YouTube линк или аудио линк..."
-            ),
+            placeholder_text=self.t("paste_url"),
         )
         self.url_entry.grid(
             row=1,
@@ -202,7 +216,7 @@ class App(ctk.CTk):
 
         label = ctk.CTkLabel(
             self.basic_tab,
-            text="Бърз избор",
+            text=self.t("quick_select"),
             font=("Arial", 17, "bold"),
         )
         label.grid(
@@ -328,7 +342,7 @@ class App(ctk.CTk):
 
             select_button = ctk.CTkButton(
                 card,
-                text="Избери",
+                text=self.t("select"),
                 width=max(self.card_width - 40, 85),
                 height=25,
                 font=("Arial", 10),
@@ -341,9 +355,9 @@ class App(ctk.CTk):
         self.basic_selected_label = ctk.CTkLabel(
             self.basic_tab,
             text=(
-                "Избран профил: "
+                f"{self.t('selected_profile')}: "
                 "Car Standard / MP3 320 kbps"
-            ),
+),
             font=("Arial", 11),
         )
         self.basic_selected_label.grid(
@@ -372,7 +386,7 @@ class App(ctk.CTk):
 
         self.folder_label = ctk.CTkLabel(
             bottom_frame,
-            text=f"Папка: {self.output_dir}",
+            text=f"OUTPUT FOLDER: {self.output_dir}",
             wraplength=self.window_width - 100,
             font=("Arial", 10),
         )
@@ -384,10 +398,10 @@ class App(ctk.CTk):
 
         folder_button = ctk.CTkButton(
             bottom_frame,
-            text="Избери папка",
+            text=self.t("select_folder"),
             width=130,
             height=28,
-            command=self.choose_folder,
+            command=self.select_folder,
         )
         folder_button.grid(
             row=1,
@@ -413,7 +427,7 @@ class App(ctk.CTk):
 
         self.status_label = ctk.CTkLabel(
             bottom_frame,
-            text="Готов за работа.",
+            text=self.t("ready"),
             font=("Arial", 11),
         )
         self.status_label.grid(
@@ -424,7 +438,7 @@ class App(ctk.CTk):
 
         self.convert_btn = ctk.CTkButton(
             bottom_frame,
-            text="Convert",
+            text=self.t("convert"),
             width=180,
             height=36,
             font=("Arial", 13, "bold"),
@@ -451,7 +465,7 @@ class App(ctk.CTk):
 
         self.basic_selected_label.configure(
             text=(
-                f"Избран профил: {profile} / "
+                f"{self.t('selected_profile')}: {profile} / "
                 f"{data['format'].upper()} "
                 f"{quality_text}"
             )
@@ -472,14 +486,14 @@ class App(ctk.CTk):
                     border_width=2,
                 )
 
-    def choose_folder(self):
+    def select_folder(self):
         selected = fd.askdirectory()
 
         if selected:
             self.output_dir = Path(selected)
 
             self.folder_label.configure(
-                text=f"Папка: {self.output_dir}"
+                text=f"Folder: {self.output_dir}"
             )
 
     def get_current_settings(self):
@@ -499,8 +513,8 @@ class App(ctk.CTk):
 
         if not url:
             mb.showwarning(
-                "Липсва линк",
-                "Постави линк.",
+                self.t("missing_url"),
+                self.t("enter_url"),
             )
             return
 
@@ -511,7 +525,7 @@ class App(ctk.CTk):
         )
         self.progress_bar.set(0)
         self.status_label.configure(
-            text="Стартиране..."
+            text=self.t("starting")
         )
 
         worker_thread = threading.Thread(
@@ -575,24 +589,27 @@ class App(ctk.CTk):
         )
         self.progress_bar.set(1)
         self.status_label.configure(
-            text="Готово!"
+            text=self.t("done")
         )
 
+        self.url_entry.delete(0, "end")
+
         mb.showinfo(
-            "Готово",
-            "Конвертирането приключи.",
+            self.t("done"),
+            self.t("conversion_finished"),
         )
+
 
     def on_error(self, error):
         self.convert_btn.configure(
             state="normal"
         )
         self.status_label.configure(
-            text="Грешка."
+            text=self.t("error")
         )
 
         mb.showerror(
-            "Грешка",
+            self.t("error"),
             error,
         )
 

@@ -17,14 +17,14 @@ class AudioConverter:
                 self.progress_callback(downloaded / total)
 
             if self.status_callback:
-                self.status_callback("Сваляне...")
+                self.status_callback("Downloading...")
 
         elif d["status"] == "finished":
             if self.progress_callback:
                 self.progress_callback(1)
 
             if self.status_callback:
-                self.status_callback("Конвертиране...")
+                self.status_callback("Converting...")
 
     def convert(
         self,

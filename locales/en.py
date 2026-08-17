@@ -1,0 +1,16 @@
+TRANSLATIONS = {
+    "quick_select": "Quick Select",
+    "paste_url": "Paste a YouTube or audio URL...",
+    "select": "Select",
+    "selected_profile": "Selected profile",
+    "folder": "Folder",
+    "select_folder": "Select folder",
+    "ready": "Ready.",
+    "starting": "Starting...",
+    "convert": "Convert",
+    "done": "Done!",
+    "conversion_finished": "Conversion completed successfully.",
+    "missing_url": "Missing URL",
+    "enter_url": "Please paste a URL.",
+    "error": "Error",
+}

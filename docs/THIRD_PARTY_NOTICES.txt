@@ -1,0 +1,103 @@
+# THIRD-PARTY SOFTWARE NOTICES
+
+Alex Audio Converter (AAC) incorporates or makes use of third-party and open-source software.
+
+The following third-party components remain the property of their respective authors and contributors and are provided under their respective license terms.
+
+---
+
+## yt-dlp
+
+Project: yt-dlp
+
+Purpose in Alex Audio Converter:
+Media information extraction and retrieval from supported online sources.
+
+License: The Unlicense
+
+Copyright and attribution belong to the yt-dlp project and its contributors.
+
+---
+
+## FFmpeg / FFprobe
+
+Project: FFmpeg
+
+Purpose in Alex Audio Converter:
+Audio decoding, encoding, format conversion and media processing.
+
+License: FFmpeg is distributed under the GNU Lesser General Public License (LGPL) version 2.1 or later by default. Certain builds or enabled components may instead cause the resulting FFmpeg build to be governed by the GNU General Public License (GPL).
+
+**Important:** The exact license applicable to Alex Audio Converter depends on the FFmpeg build distributed with the application.
+
+FFmpeg and FFprobe are trademarks or project names of their respective owners and contributors.
+
+---
+
+## CustomTkinter
+
+Project: CustomTkinter
+
+Purpose in Alex Audio Converter:
+Graphical user interface components.
+
+License: MIT License
+
+Copyright belongs to the CustomTkinter author(s) and contributors.
+
+---
+
+## Pillow
+
+Project: Pillow
+
+Purpose in Alex Audio Converter:
+Image loading and processing for application interface assets.
+
+License: HPND License
+
+Copyright belongs to the Pillow project and its contributors.
+
+---
+
+## Python
+
+Project: Python
+
+Purpose in Alex Audio Converter:
+Application runtime.
+
+Python is distributed under the Python Software Foundation License.
+
+Copyright © Python Software Foundation and respective contributors.
+
+---
+
+## Additional Components
+
+Alex Audio Converter may include additional dependencies required by the components listed above.
+
+Where required by their respective licenses, applicable copyright notices, license texts and attribution information are included with the distributed application.
+
+---
+
+## No Endorsement
+
+The inclusion or use of third-party software does not imply that the respective projects, authors or organizations endorse, sponsor or are affiliated with Alex Audio Converter.
+
+Alex Audio Converter is an independent software product.
+
+---
+
+## License Information
+
+Third-party components are provided under their respective licenses.
+
+For the authoritative license terms and copyright notices, refer to the license files distributed with the applicable component.
+
+---
+
+Alex Audio Converter
+Community Edition
+
+Copyright © 2026 Alexander Hristov

@@ -1,0 +1,16 @@
+TRANSLATIONS = {
+    "quick_select": "Бърз избор",
+    "paste_url": "Постави YouTube или аудио линк...",
+    "select": "Избери",
+    "selected_profile": "Избран профил",
+    "folder": "Папка",
+    "select_folder": "Избери папка",
+    "ready": "Готов за работа.",
+    "starting": "Стартиране...",
+    "convert": "Конвертирай",
+    "done": "Готово!",
+    "conversion_finished": "Конвертирането приключи успешно.",
+    "missing_url": "Липсва линк",
+    "enter_url": "Постави линк.",
+    "error": "Грешка",
+}
