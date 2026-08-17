@@ -1,6 +1,6 @@
 TRANSLATIONS = {
     "quick_select": "Бърз избор",
-    "paste_url": "Постави YouTube или аудио линк...",
+    "paste_url": "Постави видео или аудио линк...",
     "select": "Избери",
     "selected_profile": "Избран профил",
     "folder": "Папка",

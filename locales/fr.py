@@ -1,0 +1,16 @@
+TRANSLATIONS = {
+    "quick_select": "Sélection rapide",
+    "paste_url": "Collez une URL de vidéo ou un lien audio...",
+    "select": "Sélectionner",
+    "selected_profile": "Profil sélectionné",
+    "folder": "Dossier",
+    "select_folder": "Choisir un dossier",
+    "ready": "Prêt.",
+    "starting": "Démarrage...",
+    "convert": "Convertir",
+    "done": "Terminé !",
+    "conversion_finished": "La conversion s'est terminée avec succès.",
+    "missing_url": "URL manquante",
+    "enter_url": "Veuillez coller une URL.",
+    "error": "Erreur",
+}

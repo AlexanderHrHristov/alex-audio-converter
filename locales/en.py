@@ -1,6 +1,6 @@
 TRANSLATIONS = {
     "quick_select": "Quick Select",
-    "paste_url": "Paste a YouTube or audio URL...",
+    "paste_url": "Paste a video or audio URL...",
     "select": "Select",
     "selected_profile": "Selected profile",
     "folder": "Folder",
